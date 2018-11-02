@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2018 by bobbin (http://jsbin.com/waviwa/3/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="Coercion">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+
+<script id="jsbin-javascript">
+// Ejemplo de coerción con cadenas
+console.log("---------------------------------------");
+console.log("Vamos a comprobar cadenas vs numbers");
+var var1 = 5 + "0";
+
+console.log(var1);
+console.log(typeof var1);
+
+
+// Ejemplo de coerción con arrays
+console.log("---------------------------------------");
+console.log("Vamos a comprobar string vs arrays");
+var primerosPrimos = [1,2,3,5,7];
+var primerosPrimosStr = "1,2,3,5,7";
+
+console.log(primerosPrimos == primerosPrimosStr);
+console.log(primerosPrimosStr == primerosPrimos);
+console.log(String(primerosPrimos));
+console.log(primerosPrimos === primerosPrimosStr);
+
+console.log("---------------------------------------");
+console.log("Vamos a comprobar cadenas vacías, null y undefined");
+var var2 = "";
+var var3 = null;
+var var4 = undefined;
+
+if (var2) {
+    console.log("Tengo un contenido válido en var2");
+} else {
+    console.log(Boolean(var2));
+}
+
+if (var3) {
+    console.log("Tengo un contenido válido en var3");
+} else {
+    console.log(Boolean(var3));
+}
+
+if (var4) {
+    console.log("Tengo un contenido válido en var4");
+} else {
+    console.log(Boolean(var4));
+}
+
+console.log("---------------------------------------");
+console.log("Vamos a comprobar... 3 == \"3\" < 2 ...");
+if ( 0 == "3" < 2 ) {
+    console.log("Todas las comprobaciones son válidas");
+} else {
+    console.log("1. Tenemos que tener en cuenta la asociatividad y a qué vamos a convertir los valores");
+    console.log("2. Vamos a comparar \"3\" < 2");
+    console.log("3. Si miro la asociatividad en < vemos que va de izquierda a derecha...");
+    console.log("4. El resultado de esa comparación es false. Por lo que comprueba si...");
+    console.log("5. Si 3 == false");
+    console.log("6. Si hiciésemos Boolean(3) => true");
+    console.log("7. Por lo que true == false ---- false");
+}
+
+</script>
+</body>
+</html>

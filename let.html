@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2018 by bobbin (http://jsbin.com/mowowe/3/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="Let">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+
+<script id="jsbin-javascript">
+let i = 0;
+function foo() {
+    i = 1;
+    let j = 2;
+    if(true) {
+        const j = 3;
+        j=5;
+        console.log(i); // 1
+        console.log(j); // 2
+    }
+    console.log(i);
+    console.log(j);
+}
+
+foo();
+console.log(i);
+/*
+function foo() {
+    let i = 0;
+    if(true) {
+        let i = 1; // Sería otra variable i solo para el bloque if
+        console.log(i); // 1
+    }
+    console.log(i); // 0
+}
+foo();
+
+function foo() {
+    if(true) {
+        let i = 1;
+    }
+    console.log(i); // ReferenceError: i is not defined
+}
+foo();*/
+</script>
+</body>
+</html>

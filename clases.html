@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2018 by bobbin (http://jsbin.com/falarow/5/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="Clases">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+
+<script id="jsbin-javascript">
+
+class Person {
+    constructor(firstname, lastname, birthday) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.birthday = new Date(birthday);
+    }
+  
+    static hoy() {
+        var fecha = new Date();
+        var dia = fecha.getDate();
+        var mes = fecha.getMonth() + 1;
+        var ano = fecha.getFullYear();
+        return dia + "-" + mes + "-" + ano;
+    }
+  
+    get age() {
+        var ageDifMs = Date.now() - this.birthday.getTime();
+        var ageDate = new Date(ageDifMs);
+        return Math.abs(ageDate.getUTCFullYear() - 1970);
+    }
+  
+    set apellido(value) {
+        if(typeof value == "string")
+        {
+            this.lastname = value;  
+        }
+        
+    }
+    
+}
+
+var p = new Person('Jorge', 'Aldao', '01-10-1975');
+// ¿Qué ocurre si instanciamos antes de la definición de la clase (hoisting)?
+
+console.log(p.age);
+p.apellido = "Perez";
+console.log(p);
+
+class Developer extends Person {
+    constructor(firstname, lastname, birthday, ci) {
+        super(firstname,lastname,birthday);
+        this.ci = ci;
+    }
+    develop(language) {
+        return "Voy a programar algo en " + language;
+    }
+}
+
+var dev = new Developer('Jose', 'Perez', '20-12-1989',140);
+console.log(dev);
+console.log(dev.develop("Javascript"));
+console.log(Person.hoy());
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2018 by bobbin (http://jsbin.com/colobin/2/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="CocidoMaker">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+
+<script id="jsbin-javascript">
+let totalIngredientes = 0;
+let ingredienteActual = 0;
+
+const cocidoMaker = (ingredientes, callback) => {
+    callback(ingredientes, cortar);
+} 
+
+const ingredientesSetup = (ingredientes, callback) => {
+      
+    totalIngredientes = ingredientes.length;
+
+    for (ingrediente of ingredientes) {
+        callback(ingrediente, cocer);
+    }
+    
+}
+
+const cortar = (ingrediente, callback) => {
+    console.log(`Cortando ingrediente ${ingrediente}`);
+    callback(ingrediente, finalizar);     
+}
+
+const cocer = (ingrediente, callback) => {
+    console.log(`Cociendo ingrediente ${ingrediente}`);
+    ingredienteActual++;
+    console.log(`${ingredienteActual} / ${totalIngredientes}`);
+
+    if (ingredienteActual == totalIngredientes) {
+        callback();
+    }
+}
+
+const finalizar = () => {
+    console.log("El cocido está listo. ¡A disfrutar!");
+}
+
+const ingredientes = ["Nabo", "Puerro", "Patatas", "garbanzos", "falda", "gallina", "chorizo"]    
+
+cocidoMaker(ingredientes, ingredientesSetup);
+</script>
+</body>
+</html>

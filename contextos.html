@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2018 by bobbin (http://jsbin.com/mopuduc/2/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="Creación de objetos">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+
+<script id="jsbin-javascript">
+function coche2() {
+    console.log(this);
+    this.marca = "seat";
+    this.modelo = "ibiza";
+    this.cv = "105";
+    //console.log(this);
+}
+
+// ¿Qué hará esto?
+var cocheObj = new coche2(); // ??
+
+// ¿Y esto...?
+//coche2(); // ??
+</script>
+</body>
+</html>

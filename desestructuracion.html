@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2018 by bobbin (http://jsbin.com/licezip/3/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="Desestructuracion">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+
+<script id="jsbin-javascript">
+var ibiza = {
+    marca: "seat",
+    modelo: "ibiza",
+    cv: 105
+}
+
+let {marca, modelo, cv} = ibiza;
+
+
+const primos = [1, 2, 3, 5, 7];
+const [primero, segundo, , cuarto, quinto, sexto] = primos;
+console.log(primero);
+console.log(sexto);
+
+</script>
+</body>
+</html>
